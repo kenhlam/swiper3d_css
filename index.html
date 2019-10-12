@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="jquery-1.8.0.js"></script>
+
+  <!-- <script src="/your/path/tweene-jquery.min.js"></script> -->
+  <script src="./tweene-master/minified/tweene-all.min.js"></script>
+  <script src="swiper-animate.js"></script>
+
+  <style>
+    .editor {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+      border: 1px solid red;
+      width: 1200px;
+      height: 1000px;
+    }
+
+    .element {
+      width: 1200px;
+      height: 1000px;
+      position: absolute;
+      background-size: 100% 100%;
+      border-style: solid;
+      overflow: hidden;
+
+      background-color: transparent;
+      border-color: rgb(34, 96, 169);
+      border-width: 0px;
+    }
+
+    .panel_wrap {
+      height: 100%;
+      width: 100%;
+      border: 1px solid blue;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .swiper_panel {
+      animation-fill-mode: both;
+      animation-duration: 5000;
+      animation-timing-function: linear;
+     
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="editor">
+    <div class="element">
+      <div class="panel_wrap">
+        <div class="swiper_panel" id="swiper_panel1"
+          style="width:30%;float: left;position: relative;height: 90%;background-color:transparent;border:1px solid green;">11111111111
+          </div>
+        <div class="swiper_panel" id="swiper_panel2"
+          style="width:30%;float: left;position: relative;height: 90%;background-color:transparent;border:1px solid green;">2222222222
+        </div>
+        <div class="swiper_panel" id="swiper_panel3"
+          style="width:30%;float: left;position: relative;height: 90%;background-color:transparent;border:1px solid green;">333333333333333333
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button id="stop">stop</button>
+  <button id="start">start</button>
+</body>
+
+</html>
+
+<script>
+  // panel_wrap   swiper_panel id
+  // 单块移动 循环执行
+  window.swiper = new SwiperAniamte();
+  swiper.createSwiper({ wrapClass: 'panel_wrap', panelClass: 'swiper_panel' });
+
+  
+  // swiper.createAnimationPath();
+  swiper.startAnimation();
+  // var idx;
+  // swiper.stopeAnimation();
+
+  
+  
+</script>

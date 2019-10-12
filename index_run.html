@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <title>document</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="jquery-1.8.0.js"></script>
+
+  <!-- <script src="/your/path/tweene-jquery.min.js"></script> -->
+  <script src="./tweene-master/minified/tweene-all.min.js"></script>
+  <script src="swiper-animate-run.js"></script>
+
+  <style>
+    .editor {
+      position: absolute;
+      left: 20px;
+      top: 20px;
+
+      width: 1200px;
+      height: 1000px;
+    }
+
+    .element {
+      width: 1200px;
+      height: 1000px;
+      position: absolute;
+      background-size: 100% 100%;
+      border-style: solid;
+      overflow: hidden;
+
+      background-color: transparent;
+      border-color: rgb(34, 96, 169);
+      border-width: 0px;
+    }
+
+    .element>div {
+      border: 1px solid red;
+    }
+
+    .panel_wrap {
+      height: 100%;
+      width: 100%;
+      border: 1px solid blue;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .swiper_panel {
+      animation-fill-mode: both;
+      animation-duration: 5000;
+      animation-timing-function: linear;
+
+    }
+
+    .tips_wrap {
+      background: wheat;
+      opacity: 0.5;
+    }
+  </style>
+</head>
+
+<body>
+
+  <div class="editor">
+    <div class="element">
+      <div
+        style="width: 640px; height: 600px; position: relative; background-size: 100% 100%;  overflow: hidden; padding: 0px 20px; background-color: transparent;  visibility: visible;"
+        class="swiper3d_container" id="a15662683089982">
+        <div class="pagenation_wrap" style="position:absolute;left:0;right:0;bottom:0;"></div>
+        <div class="page_turn_wrap"><span class="left glyphicon glyphicon-menu-left"
+            style="display: inline-block; position: absolute; top: 0px; bottom: 0px; margin: auto; left: 0px; width: 22px; height: 22px; line-height: 22px; background-size: 100% 100%; cursor: pointer; z-index: 3; "></span><span
+            class="right glyphicon glyphicon-menu-right"
+            style="display: inline-block; position: absolute; top: 0px; bottom: 0px; margin: auto; right: 0px; width: 22px; height: 22px; line-height: 22px; background-size: 100% 100%; cursor: pointer; z-index: 3;"></span>
+
+        </div>
+        <div id="'a156626830901516'" cid='a156626830901516' class="a156626830901516 tips_wrap"
+          style="left: 0px; top: 0px; height: 300px; width: 300px;">
+          <div ng-transclude=""
+            style="position: absolute; left: 0px; top: 0px;  width: 300px; height: 300px;  overflow: hidden;"
+            class="container tip-container" id="a156626830901516">
+            111111111111111111111111111111111111111 F11111
+          </div>
+        </div>
+        <div id="'a156626830901532'" cid='a156626830901532' class="a156626830901532 tips_wrap"
+          style="left: 0px; top: 0px; height: 300px; width: 300px;">
+          <div ng-transclude=""
+            style="position: absolute; left: 0px; top: 0px;  width: 300px; height: 300px; overflow: hidden;"
+            class="container tip-container" id="a156626830901532">
+            2222222222222222222222222222222222222222222
+          </div>
+        </div>
+        <div id="'a156626830901549'" cid='a156626830901549' class="a156626830901549 tips_wrap"
+          style="left: 0px; top: 0px; height: 300px; width: 300px;">
+          <div ng-transclude=""
+            style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px;  overflow: hidden;"
+            class="container tip-container" id="a156626830901549">
+            333333333333333333333333333333333333333333333333333333333333333333333333333
+          </div>
+        </div>
+        <div id="'a156626830901549222'" cid='a156626830901549222' class="a156626830901549222 tips_wrap"
+          style="left: 0px; top: 0px; height: 300px; width: 300px;">
+          <div ng-transclude=""
+            style="position: absolute; left: 0px; top: 0px; width: 300px; height: 300px;  overflow: hidden;"
+            class="container tip-container" id="a156626830901549222">
+            44444444444444444444444444444444444444444444444444444444444444444
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <button id="stop">stop/prev</button>
+  <button id="start">start/next</button>
+</body>
+
+</html>
+
+<script>
+  // 已知 a15662683089982           a156626830901516   a156626830901532   a156626830901549
+  // {"margin_top":"20","animation_time":"3000","gap":"10","animation_direction_v":"t_b","animation_fn":"linear","margin_left":"20","direction":"h","animation_direction_h":"l_r"}
+  // <div id="'a156626830901516'" cid='a156626830901516' class="a156626830901516 tips_wrap">  对panel添加 cid class 统一的class
+  var opt = {
+    id: "a15662683089982",
+    classIds: ['a156626830901516', 'a156626830901532', 'a156626830901549'], //swiper3d添加
+    panelClass:'tips_wrap',//swiper3d添加
+    "margin_top": "20", "animation_time": "2000", "gap": "10",
+    "direction": "v",
+    "animation_direction_v": "b_t", "animation_fn": "linear", "margin_left": "20",
+    "animation_direction_h": "l_r",
+    "auto":false
+  };
+  window.sw = new SwiperAniamte(opt);
+$("#stop").click(function(){
+  sw.prev()
+})
+$("#start").click(function(){
+  sw.next()
+})
+</script>

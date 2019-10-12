@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Dream Factory3</title>
+	<script src="jquery-1.8.0.js"></script>
+	<script src="slider-animation3.js"></script>
+	<style>
+		* {
+			padding: 0;
+			margin: 0;
+			box-sizing: border-box;
+		}
+		.newwarp{
+			width: 1200px;
+			height: 400px;
+			position: relative;
+			overflow: hidden;
+			backface-visibility: visible;
+			margin:0 200px;
+			background:pink;
+		}
+		.wrap {
+			
+			background: skyblue;
+			
+			
+			
+		}
+		
+		.panel {
+			float: left;
+    /* position: relative; */
+			width: 200px;
+			height: 200px;
+			/* border: 1px solid red; */
+			position: absolute;
+			
+		}
+		#panel1 {
+			background: url(img/1.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel2 {
+			background: url(img/2.png);
+			background-size: 100% 100%;
+
+
+		}
+
+		#panel3 {
+			background: url(img/3.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel4 {
+			background: url(img/4.png);
+			background-size: 100% 100%;
+
+
+		}
+
+		#panel5 {
+			background: url(img/5.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel6 {
+			background: url(img/6.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel7 {
+			background: url(img/7.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel8 {
+			background: url(img/11.png);
+			background-size: 100% 100%;
+
+		}
+
+		#panel9 {
+			background: url(img/22.png);
+			background-size: 100% 100%;
+
+		}
+
+		.pagenator {
+			width: 30px;
+			height: 30px;
+			border-radius: 30px;
+			color: red;
+			border: 1px solid red;
+		}
+
+		/* transform: perspective(1200px) rotateY(310deg); */
+	</style>
+	<style>
+
+
+
+
+
+
+	</style>
+</head>
+
+<body>
+	<div class="newwarp">
+		<div class="wrap">
+			<div class="panel" id="panel1">0</div>
+			<div class="panel" id="panel2">1</div>
+			<div class="panel" id="panel3">2</div>
+			<div class="panel" id="panel4">3</div>
+			<div class="panel" id="panel5">4</div>
+			<div class="panel" id="panel6">5</div>
+			<div class="panel" id="panel7">6</div>
+			<div class="panel" id="panel8">7</div>
+			<div class="panel" id="panel9">8</div>
+			<div class="panel" id="panel9">9</div>
+
+		</div>
+	</div>
+
+	<div>
+		<span class="pagenator">0</span>
+		<span class="pagenator">1</span>
+		<span class="pagenator">2</span>
+		<span class="pagenator">3</span>
+		<span class="pagenator">4</span>
+		<span class="pagenator">5</span>
+		<span class="pagenator">6</span>
+		<span class="pagenator">7</span>
+		<span class="pagenator">8</span>
+		<span class="pagenator">9</span>
+	</div>
+	<button class="prev"><</button> 
+	<button class="next">></button>
+	<button class="stop">stop</button>
+	<button class="start">start</button>
+	<button class="fangda">fangda</button>
+	<button class="suoxiao">suoxiao</button>
+
+</body>
+<script>
+	window.slider = new Sliderwing();
+	window.opt = opt = {
+		panelClass: 'panel',
+		wrapClass: 'wrap',
+		count: 3
+	}
+	slider.init(opt);
+	slider.initAnimation();
+
+
+
+	$(".pagenator").on('click', function () {
+		slider.skipToPanel($(this).index());
+	});
+	$(".next").on('click', function () {
+		slider.next();
+	});
+	$(".prev").on('click', function () {
+		slider.prev($(this).index());
+	});
+	$(".stop").on('click', function () {
+		slider.stopAnimation($(this).index());
+	});
+	$(".start").on('click', function () {
+		slider.startAnimation($(this).index());
+	});
+	$(".fangda").on('click', function () {
+		slider.setScale(true);
+	});
+	$(".suoxiao").on('click', function () {
+		slider.setScale(false);
+	});
+	// initStaticPositon(opt);
+
+
+
+
+</script>
+
+
+</html>
