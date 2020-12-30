@@ -3,6 +3,8 @@ function Sliderwing() {
         maxZIndex: 99,
         id: 'ccxvvv',//传入id
 
+
+        
         scale: 0.8,
         direction: 'v',//h  v  横纵向
         animationDir: 't_b',//l_r  r_l  从左一右
